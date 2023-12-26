@@ -35,13 +35,13 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
-    implementation 'io.socket:socket.io-client:1.0.2'
+    implementation 'io.socket:socket.io-client:2.1.0'
 
     forgeRuntimeLibrary 'com.squareup.okhttp3:okhttp:3.8.1'
-    forgeRuntimeLibrary 'io.socket:socket.io-client:1.0.2'
+    forgeRuntimeLibrary 'io.socket:socket.io-client:2.1.0'
 
     shadowCommon 'com.squareup.okhttp3:okhttp:3.8.1'
-    shadowCommon 'io.socket:socket.io-client:1.0.2'
+    shadowCommon 'io.socket:socket.io-client:2.1.0'
 }
 
 processResources {
@@ -53,6 +53,8 @@ processResources {
 }
 
 shadowJar {
+    archiveFileName = "${rootProject.archives_base_name}-${project.version}-${project.name}-${rootProject.minecraft_version}.jar"
+
     exclude "fabric.mod.json"
     exclude "architectury.common.json"
 

@@ -31,6 +31,9 @@ dependencies {
     implementation "com.electronwill.night-config:core:3.6.4"
     implementation "com.electronwill.night-config:toml:3.6.4"
 
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+    implementation 'io.socket:socket.io-client:2.1.0'
+
     shadowCommon "com.electronwill.night-config:core:3.6.4"
     shadowCommon "com.electronwill.night-config:toml:3.6.4"
     shadowCommon "com.squareup.okhttp3:okhttp:3.8.1"
@@ -46,6 +49,8 @@ processResources {
 }
 
 shadowJar {
+    archiveFileName = "${rootProject.archives_base_name}-${project.version}-${project.name}-${rootProject.minecraft_version}.jar"
+
     configurations = [project.configurations.shadowCommon]
     archiveClassifier.set("dev-shadow")
 }

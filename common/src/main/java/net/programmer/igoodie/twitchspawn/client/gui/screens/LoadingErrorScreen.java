@@ -92,7 +92,7 @@ public class LoadingErrorScreen extends Screen
 
 
     @Override
-    public void renderBackground(GuiGraphics guiGraphics, int i, int j, float f)
+    public void renderBackground(GuiGraphics guiGraphics)
     {
         guiGraphics.fillGradient(0, 0, this.width, this.height, -12574688, -11530224);
     }
