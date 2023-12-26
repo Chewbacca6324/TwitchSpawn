@@ -11,11 +11,11 @@ dependencies {
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
     // Add JSON dependency
-    compileOnly "com.electronwill.night-config:core:3.6.4"
-    compileOnly "com.electronwill.night-config:toml:3.6.4"
+    compileOnly "com.electronwill.night-config:core:${rootProject.night_config_core_version}"
+    compileOnly "com.electronwill.night-config:toml:${rootProject.night_config_toml_version}"
 
-    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
-    implementation 'io.socket:socket.io-client:2.1.0'
+    compileOnly "com.squareup.okhttp3:okhttp:${rootProject.okhttp_version}"
+    compileOnly "io.socket:socket.io-client:${rootProject.socket_io_version}"
 }
 
 architectury {

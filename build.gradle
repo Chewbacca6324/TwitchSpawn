@@ -46,6 +46,8 @@ allprojects {
 
     dependencies {
         implementation 'org.json:json:20231013'
+        implementation "com.squareup.okhttp3:okhttp:${rootProject.okhttp_version}"
+        implementation "io.socket:socket.io-client:${rootProject.socket_io_version}"
     }
 
     tasks.withType(JavaCompile) {

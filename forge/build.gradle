@@ -34,14 +34,11 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
-    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
-    implementation 'io.socket:socket.io-client:2.1.0'
+    forgeRuntimeLibrary "com.squareup.okhttp3:okhttp:${rootProject.okhttp_version}"
+    forgeRuntimeLibrary "io.socket:socket.io-client:${rootProject.socket_io_version}"
 
-    forgeRuntimeLibrary 'com.squareup.okhttp3:okhttp:3.8.1'
-    forgeRuntimeLibrary 'io.socket:socket.io-client:2.1.0'
-
-    shadowCommon 'com.squareup.okhttp3:okhttp:3.8.1'
-    shadowCommon 'io.socket:socket.io-client:2.1.0'
+    shadowCommon "com.squareup.okhttp3:okhttp:${rootProject.okhttp_version}"
+    shadowCommon "io.socket:socket.io-client:${rootProject.socket_io_version}"
 }
 
 processResources {

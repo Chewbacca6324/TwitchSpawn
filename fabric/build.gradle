@@ -28,16 +28,14 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-    implementation "com.electronwill.night-config:core:3.6.4"
-    implementation "com.electronwill.night-config:toml:3.6.4"
+    implementation "com.electronwill.night-config:core:${rootProject.night_config_core_version}"
+    implementation "com.electronwill.night-config:toml:${rootProject.night_config_toml_version}"
 
-    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
-    implementation 'io.socket:socket.io-client:2.1.0'
+    shadowCommon "com.electronwill.night-config:core:${rootProject.night_config_core_version}"
+    shadowCommon "com.electronwill.night-config:toml:${rootProject.night_config_toml_version}"
 
-    shadowCommon "com.electronwill.night-config:core:3.6.4"
-    shadowCommon "com.electronwill.night-config:toml:3.6.4"
-    shadowCommon "com.squareup.okhttp3:okhttp:3.8.1"
-    shadowCommon "io.socket:socket.io-client:1.0.2"
+    shadowCommon "com.squareup.okhttp3:okhttp:${rootProject.okhttp_version}"
+    shadowCommon "io.socket:socket.io-client:${rootProject.socket_io_version}"
 }
 
 processResources {
