@@ -81,9 +81,10 @@ public class SummonAction extends TSLAction {
 
     @Override
     protected String subtitleEvaluator(String expression, EventArguments args) {
-        // XXX: Dunno where that went... Fix that later?
-//        if (expression.equals("mobName"))
-//            return entityType.getName().getString();
+        String name = entityType.toShortString();
+
+        if (expression.equals("mobName"))
+           return name.substring(0, 1).toUpperCase() + name.substring(1);
         return null;
     }
 
